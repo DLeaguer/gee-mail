@@ -9,7 +9,13 @@
         
         var getMain = document.getElementById('main');
 
-        for (var i=0; i<subject.length; i++){
+            var countDiv = document.createElement('p');
+            countDiv.className = 'count';
+            countDiv.innerHTML = 'Inbox: ' + sender.length + ' items.';
+            main.appendChild(countDiv);
+
+        for (var i=0; i<sender.length; i++){
+
 
         	var mainDiv = document.createElement('div');
         	mainDiv.className = 'main';
@@ -41,6 +47,8 @@
 	        messageDiv.appendChild(bodyDiv);
 
         }
+
+
 
         var messDivGet = document.getElementsByClassName('message');
         for (i=0; i<messDivGet.length; i++){
