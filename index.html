@@ -9,10 +9,15 @@
         
         var getMain = document.getElementById('main');
 
-            var countDiv = document.createElement('p');
-            countDiv.className = 'count';
-            countDiv.innerHTML = 'Inbox: ' + sender.length + ' items.';
-            main.appendChild(countDiv);
+        var headerh1 = document.createElement('h1');
+        headerh1.className = 'header';
+        headerh1.innerHTML = 'Gee-Mail';
+        main.appendChild(headerh1);
+
+        var countDiv = document.createElement('p');
+        countDiv.className = 'count';
+        countDiv.innerHTML = 'Inbox: ' + sender.length + ' items.';
+        main.appendChild(countDiv);
 
         for (var i=0; i<sender.length; i++){
 
