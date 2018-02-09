@@ -105,7 +105,19 @@
         moreBody.innerHTML = objGet.body;
         moreMessage.appendChild(moreBody);
 
+        var moreMess = document.getElementsByClassName('moreMessage');
+        for (i=0; i<moreMess.length; i++){
+            moreMess[i].addEventListener('click', showMoreBody);
+        }
 
+        function showMoreBody(){
+            // var pElem = getElementsByClassName('moreBody');
+            if (moreBody.style.display === 'none'){
+                moreBody.style.display = 'block';
+            }else{
+                moreBody.style.display = 'none';
+            }
+        }
 
         
 
