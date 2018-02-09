@@ -7,8 +7,56 @@
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
         
+        var getMain = document.getElementById('main');
 
-        
+        for (var i=0; i<subject.length; i++){
+
+        	var mainDiv = document.createElement('div');
+        	mainDiv.className = 'main';
+        	main.appendChild(mainDiv);
+
+        	var dateDiv = document.createElement('div');
+        	dateDiv.className = 'date';
+        	dateDiv.innerHTML = 'Date: ' + getRandomDate();
+        	mainDiv.appendChild(dateDiv);
+
+        	var senderDiv = document.createElement('div');
+        	senderDiv.className = 'sender';
+        	senderDiv.innerHTML = 'Sender: ' + sender[i];
+        	mainDiv.appendChild(senderDiv);
+
+	        var subjectDiv = document.createElement('div');
+	        subjectDiv.className = 'subject';
+	        subjectDiv.innerHTML = 'subject: ' + subject[i];
+	        mainDiv.appendChild(subjectDiv);
+
+	        var messageDiv = document.createElement('div');
+	        messageDiv.className = 'message';
+	        messageDiv.innerHTML = 'Message:';
+	        mainDiv.appendChild(messageDiv);
+
+	        var bodyDiv = document.createElement('div');
+	        bodyDiv.className = 'body';
+	        bodyDiv.innerHTML = body[i];
+	        messageDiv.appendChild(bodyDiv);
+
+        }
+
+        var messDivGet = document.getElementsByClassName('message');
+        for (i=0; i<messDivGet.length; i++){
+		    messDivGet[i].addEventListener('click', showBody);
+        }
+
+        function showBody(){
+        	var pElem = this.querySelectorAll('.body')[0];
+        	console.log(pElem);
+        	if (pElem.style.display === 'none'){
+        		pElem.style.display = 'block';
+        	}else{
+        		pElem.style.display = 'none';
+        	}
+        }
+		        
         
       };
     </script>

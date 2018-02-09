@@ -1,0 +1,22 @@
+body{
+	background-color: lightblue;
+}
+
+.main{
+	border: 1px solid black;
+	margin: 5px;
+	margin-right: 10%;
+	margin-left: 10%;
+}
+
+.message{
+	margin: 5px;
+}
+
+.message:hover{
+	cursor: pointer;
+}
+
+.body{
+	display: none;
+}
