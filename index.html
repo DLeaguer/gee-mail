@@ -14,13 +14,14 @@
         headerh1.innerHTML = 'Gee-Mail';
         main.appendChild(headerh1);
 
+        var counter = sender.length;
+
         var countDiv = document.createElement('p');
         countDiv.className = 'count';
-        countDiv.innerHTML = 'Inbox: ' + sender.length + ' items.';
+        countDiv.innerHTML = 'Inbox: ' + counter + ' items.';
         main.appendChild(countDiv);
 
         for (var i=0; i<sender.length; i++){
-
 
         	var mainDiv = document.createElement('div');
         	mainDiv.className = 'main';
@@ -38,7 +39,7 @@
 
 	        var subjectDiv = document.createElement('div');
 	        subjectDiv.className = 'subject';
-	        subjectDiv.innerHTML = 'subject: ' + subject[i];
+	        subjectDiv.innerHTML = 'Subject: ' + subject[i];
 	        mainDiv.appendChild(subjectDiv);
 
 	        var messageDiv = document.createElement('div');
@@ -51,25 +52,79 @@
 	        bodyDiv.innerHTML = body[i];
 	        messageDiv.appendChild(bodyDiv);
 
+
         }
-
-
 
         var messDivGet = document.getElementsByClassName('message');
         for (i=0; i<messDivGet.length; i++){
-		    messDivGet[i].addEventListener('click', showBody);
+            messDivGet[i].addEventListener('click', showBody);
         }
 
         function showBody(){
-        	var pElem = this.querySelectorAll('.body')[0];
-        	console.log(pElem);
-        	if (pElem.style.display === 'none'){
-        		pElem.style.display = 'block';
-        	}else{
-        		pElem.style.display = 'none';
-        	}
+            var pElem = this.querySelectorAll('.body')[0];
+            console.log(pElem);
+            if (pElem.style.display === 'none'){
+                pElem.style.display = 'block';
+            }else{
+                pElem.style.display = 'none';
+            }
         }
-		        
+
+        // console.log(getNewMessage());
+        var objGet = getNewMessage();
+        console.log(objGet);
+        console.log(objGet.length);
+
+        var moreMain = document.createElement('div');
+        moreMain.className = 'moreMain';
+        moreMain.innerHTML = '';
+        main.appendChild(moreMain);
+
+        var moreDate = document.createElement('div');
+        moreDate.className = 'moreDate';
+        moreDate.innerHTML = 'Date: ' + objGet.date;
+        moreMain.appendChild(moreDate);
+
+        var moreSender = document.createElement('div');
+        moreSender.className = 'moreSender';
+        moreSender.innerHTML = 'Sender: ' + objGet.sender;
+        moreMain.appendChild(moreSender);
+
+        var moreSubject = document.createElement('div');
+        moreSubject.className = 'moreSubject';
+        moreSubject.innerHTML = 'Subject: ' + objGet.subject;
+        moreMain.appendChild(moreSubject);
+
+        var moreMessage = document.createElement('div');
+        moreMessage.className = 'moreMessage';
+        moreMessage.innerHTML = 'Message: ';
+        moreMain.appendChild(moreMessage);
+
+        var moreBody = document.createElement('div');
+        moreBody.className = 'moreBody';
+        moreBody.innerHTML = objGet.body;
+        moreMessage.appendChild(moreBody);
+
+
+
+        
+
+        // var moreDiv = document.createElement('div');
+        // moreDiv.className = 'more';
+        // moreDiv.innerHTML = 'New Messages';
+        // main.appendChild(moreDiv);
+
+        // var moreDivGet = document.getElementsByClassName('more');
+        // for (i=0; i<moreDivGet.length; i++){
+        //     moreDivGet[i].addEventListener('click', setInterval);
+        // }
+
+        // function setInterval(){
+        //     var newMessage = document.createElement('div');
+        //     newMessage.className = 'newMessage';
+        //     newMessage.innerHTML = getNewMessage();
+        //     moreDiv.appendChild(newMessage);
+        // }
         
       };
     </script>

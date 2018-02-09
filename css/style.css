@@ -31,3 +31,23 @@ h1{
 .body{
 	display: none;
 }
+
+.moreMain{
+	background-color: lavender;
+	border: 1px solid black;
+	margin: 5px;
+	margin-right: 10%;
+	margin-left: 10%;
+}
+
+.moreMessage{
+	margin: 5px;
+}
+
+.moreMessage:hover{
+	cursor: pointer;
+}
+
+.moreBody{
+	display: none;
+}
