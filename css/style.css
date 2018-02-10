@@ -8,8 +8,21 @@ h1{
 }
 
 .count{
-	/*background-color: orange;*/
+	background-color: turquoise;
+	/*border: 1px solid black;*/
+	margin: 5px;
+	margin-right: 48%;
 	margin-left: 10%;
+}
+
+.countOld{
+	background-color: turquoise;
+	margin-right: 78%;
+}
+
+.countNew{
+	background-color: turquoise;
+	margin-right: 77%;
 }
 
 .main{
