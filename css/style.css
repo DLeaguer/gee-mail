@@ -1,27 +1,53 @@
 body{
+	background-image: url('../images/spotStreaks.jpg');
 	background-color: lightblue;
+	font-family: 'Exo 2';
+	font-size: 20px;
 }
 
 h1{
+	background-image: url('../images/blurryLights.jpg');
 	background-color: green;
+	border-radius: 25px;
 	padding: 20px;
 }
 
+.imgBack{
+	/*height: 200px;*/
+	background-image: url('../images/blurryLights.png');
+	background-size: 300px 200px;
+	background-repeat: space;
+	border-radius: 25px;
+	color: cyan;
+	font-size: 70px;
+	font-family: 'Bungee Shade';
+	padding: 40px;
+	text-align: center;
+}
+
 .count{
+	background-image: url('../images/blurryLights.jpg');
 	background-color: turquoise;
+	color: white;
+	font-family: 
 	/*border: 1px solid black;*/
-	margin: 5px;
+	padding: 25px;
+	margin: 25px;
 	margin-right: 48%;
 	margin-left: 10%;
 }
 
 .countOld{
+	background-image: url('../images/blurryLights.jpg');
 	background-color: turquoise;
+	color: white;
 	margin-right: 78%;
 }
 
 .countNew{
+	background-image: url('../images/blurryLights.jpg');
 	background-color: turquoise;
+	color: white;
 	margin-right: 77%;
 }
 

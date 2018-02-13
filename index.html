@@ -2,6 +2,7 @@
     <head>
         <script src="js/mail-generator.js"></script>
         <link href="css/style.css" rel="stylesheet" media="screen">
+        <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Exo+2|Titillium+Web" rel="stylesheet">
     <script>
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
@@ -11,15 +12,41 @@
 
         var headerh1 = document.createElement('h1');
         headerh1.className = 'header';
-        headerh1.innerHTML = 'Gee-Mail';
+        // headerh1.innerHTML = 'Gee-Mail';
+        // headerh1.src = '../images/blurryLights.jpg';
         main.appendChild(headerh1);
 
-        setInterval(getNewMessage());
+        var imgBack = document.createElement('h2');
+        imgBack.className = 'imgBack';
+        // imgBack.src = '../images/blurryLights.jpg';
+        imgBack.innerHTML = 'Gee';
+        headerh1.appendChild(imgBack);
+        
+        var imgBack2 = document.createElement('h2');
+        imgBack2.className = 'imgBack';
+        // imgBack.src = '../images/blurryLights.jpg';
+        imgBack2.innerHTML = 'Mail';
+        imgBack.appendChild(imgBack2);
+
+        function setInterval(){
+            for (var i=0; i<10; i++){
+                getNewMessage();
+                // loadGeeMails();
+            }
+            // console.log(loadGeeMails());
+            // return loadGeeMails();
+            // console.log(getNewMessage());
+            return getNewMessage();
+        }
+        setInterval();
+
+        // setInterval(getNewMessage());
+
         // console.log(getNewMessage());
         // var objGet = getNewMessage();
-        console.log(loadGeeMails(getNewMessage()));
+        // console.log(loadGeeMails(getNewMessage()));
         // console.log(generateMessage());
-        console.log(window.geemails);
+        // console.log(window.geemails);
         var objGet = window.geemails;
         // var objGet = getNewMessage();
         // console.log(objGet);
@@ -150,16 +177,6 @@
                 }
             }            
 
-
-        function setInterval(){
-            for (var i=0; i<10; i++){
-                getNewMessage();
-                loadGeeMails();
-            }
-            console.log(loadGeeMails());
-            return loadGeeMails();
-        }
-        setInterval();
 
 
         // var moreDiv = document.createElement('div');
