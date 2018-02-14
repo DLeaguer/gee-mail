@@ -1,6 +1,7 @@
 <html>
     <head>
         <script src="js/mail-generator.js"></script>
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
         <link href="css/style.css" rel="stylesheet" media="screen">
         <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Exo+2|Titillium+Web" rel="stylesheet">
     <script>
@@ -107,10 +108,14 @@
         for (i=0; i<messDivGet.length; i++){
             messDivGet[i].addEventListener('click', showBody);
         }
+        var bodyElem = document.getElementsByClassName('body');
+        for (i=0; i<bodyElem.length; i++){
+            bodyElem[i].style.display = 'none';
+        }
 
         function showBody(){
             var pElem = this.querySelectorAll('.body')[0];
-            console.log(pElem);
+            // console.log(pElem);
             if (pElem.style.display === 'none'){
                 pElem.style.display = 'block';
             }else{
@@ -166,6 +171,11 @@
             var moreMess = document.getElementsByClassName('moreMessage');
             for (i=0; i<moreMess.length; i++){
                 moreMess[i].addEventListener('click', showMoreBody);
+            }
+
+            var moreBodyElem = document.getElementsByClassName('moreBody');
+            for (i=0; i<moreBodyElem.length; i++){
+                moreBodyElem[i].style.display = 'none';
             }
 
             function showMoreBody(){
