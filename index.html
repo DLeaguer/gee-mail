@@ -29,25 +29,20 @@
         imgBack2.innerHTML = 'Mail';
         imgBack.appendChild(imgBack2);
 
-        function setInterval(){
-            for (var i=0; i<10; i++){
-                getNewMessage();
-                // loadGeeMails();
-            }
+        // function setInterval(){
+            // for (var i=0; i<5; i++){
+            //     getNewMessage();
+            //     loadGeeMails();
+            // }
             // console.log(loadGeeMails());
             // return loadGeeMails();
             // console.log(getNewMessage());
-            return getNewMessage();
-        }
-        setInterval();
+            // return getNewMessage();
+        // }
+        
 
-        // setInterval(getNewMessage());
 
-        // console.log(getNewMessage());
-        // var objGet = getNewMessage();
-        // console.log(loadGeeMails(getNewMessage()));
-        // console.log(generateMessage());
-        // console.log(window.geemails);
+
         var objGet = window.geemails;
         // var objGet = getNewMessage();
         // console.log(objGet);
@@ -66,8 +61,7 @@
         countDiv.innerHTML = 'Inbox: ' + sender.length + ' old items below.';
         main.appendChild(countDiv);
 
-        // var counter = sender.length + objGet.length;
-        // var counter = sender.length + window.geemails.length;
+
 
 
         for (var i=0; i<sender.length; i++){
@@ -101,8 +95,9 @@
             bodyDiv.innerHTML = body[i];
             messageDiv.appendChild(bodyDiv);
 
-
         }
+
+
 
         var messDivGet = document.getElementsByClassName('message');
         for (i=0; i<messDivGet.length; i++){
@@ -128,90 +123,260 @@
         countDiv.innerHTML = 'Inbox: ' + objGet.length + ' new items below.';
         main.appendChild(countDiv);
 
+
+
         
-            for (i=0; i<window.geemails.length; i++){
+        for (i=0; i<window.geemails.length; i++){
 
-                var moreMain = document.createElement('div');
-                moreMain.className = 'moreMain';
-                moreMain.innerHTML = '';
-                main.appendChild(moreMain);
+            var moreMain = document.createElement('div');
+            moreMain.className = 'moreMain';
+            moreMain.innerHTML = '';
+            main.appendChild(moreMain);
 
-                var moreDate = document.createElement('div');
-                moreDate.className = 'moreDate';
-                moreDate.innerHTML = 'Date: ' + objGet[i].date;
-                moreMain.appendChild(moreDate);
+            var moreDate = document.createElement('div');
+            moreDate.className = 'moreDate';
+            moreDate.innerHTML = 'Date: ' + objGet[i].date;
+            moreMain.appendChild(moreDate);
 
-                var moreSender = document.createElement('div');
-                moreSender.className = 'moreSender';
-                moreSender.innerHTML = 'Sender: ' + objGet[i].sender;
-                moreMain.appendChild(moreSender);
+            var moreSender = document.createElement('div');
+            moreSender.className = 'moreSender';
+            moreSender.innerHTML = 'Sender: ' + objGet[i].sender;
+            moreMain.appendChild(moreSender);
 
-                var moreSubject = document.createElement('div');
-                moreSubject.className = 'moreSubject';
-                moreSubject.innerHTML = 'Subject: ' + objGet[i].subject;
-                moreMain.appendChild(moreSubject);
+            var moreSubject = document.createElement('div');
+            moreSubject.className = 'moreSubject';
+            moreSubject.innerHTML = 'Subject: ' + objGet[i].subject;
+            moreMain.appendChild(moreSubject);
 
-                var moreMessage = document.createElement('div');
-                moreMessage.className = 'moreMessage';
-                moreMessage.innerHTML = 'Message: ';
-                moreMain.appendChild(moreMessage);
+            var moreMessage = document.createElement('div');
+            moreMessage.className = 'moreMessage';
+            moreMessage.innerHTML = 'Message: ';
+            moreMain.appendChild(moreMessage);
 
-                var moreBody = document.createElement('div');
-                moreBody.className = 'moreBody';
-                moreBody.innerHTML = objGet[i].body;
-                moreMessage.appendChild(moreBody);
+            var moreBody = document.createElement('div');
+            moreBody.className = 'moreBody';
+            moreBody.innerHTML = objGet[i].body;
+            moreMessage.appendChild(moreBody);
+            
+        }
+
+
+
+
+        var moreMess = document.getElementsByClassName('moreMessage');
+        for (i=0; i<moreMess.length; i++){
+            moreMess[i].addEventListener('click', showMoreBody);
+        }
+
+        var moreBodyElem = document.getElementsByClassName('moreBody');
+        for (i=0; i<moreBodyElem.length; i++){
+            moreBodyElem[i].style.display = 'none';
+        }
+
+        function showMoreBody(){
+            var pElem = this.querySelectorAll('.moreBody')[0];
+            if (pElem.style.display === 'none'){
+                pElem.style.display = 'block';
+            }else{
+                pElem.style.display = 'none';
+            }
+        }
+
+
+
+
+        // var myVar;
+        // function myStartFunction() {
+        // myVar = setInterval(alertFunc, 2000);
+        // }
+
+        // function alertFunc() {
+        // document.getElementsByClassName("newMain").innerHTML += getNewMessage().date;
+
+        // }
+
+        // var newMail = [];
+        // function myMail(){
+        //     setInterval(messages(), 5000);
+        // }   
+        // function messages(){
+        //     newMail += getNewMessage();
+        // } 
+        // console.log(getNewMessage());
+        
+
+
+        // // var newMail;
+        // // function myMail(){
+        //    var newMail = setInterval(function(){getNewMessage();}, 10000);
+        // // }
+        // // myMail();
+        // // console.log(myMail);
+        // var myMail = [];
+        // function getNewMessage(){
+        //     // document.getElementsByClassName('newDate').innerHTML += getNewMessage().date;
+        //     for (var i=0; i<10; i++){
+        //         myMail.push(getNewMessage());
+        //     }
+        // }
+
+
+        var buttonStart = document.createElement('div');
+        buttonStart.className = 'buttonStart';
+        buttonStart.innerHTML = 'More Messages Start';
+        main.appendChild(buttonStart);
+
+        var buttonStartGet = document.getElementsByClassName('buttonStart');
+        for (i=0; i<buttonStartGet.length; i++){
+            buttonStartGet[i].addEventListener('click', myStartFunction);
+        }
+
+
+        var buttonStop = document.createElement('div');
+        buttonStop.className = 'buttonStop';
+        buttonStop.innerHTML = 'More Messages Stop';
+        main.appendChild(buttonStop);
+
+        var buttonStopGet = document.getElementsByClassName('buttonStop');
+        for (i=0; i<buttonStopGet.length; i++){
+            buttonStopGet[i].addEventListener('click', myStopFunction);
+        }
+
+
+            // console.log(newMail);
+            // console.log(getNewMessage());
+
+        countDiv = document.createElement('p');
+        countDiv.className = 'countNew';
+        countDiv.innerHTML = 'Inbox: ' + myVar + ' new items below.';
+        main.appendChild(countDiv);
+        // console.log(newmail.length);
                 
-            }
-        //     console.log(objGet)
-        //     return objGet;
+
+
+        // function getNewMessage() {    
+        // for (i=0; i<getNewMessage().length; i++){
+
+
+
+        var myVar;
+
+        function myStartFunction() {
+            myVar = setInterval(alertFunc, 10000);
+        }
+        // myStartFunction();
+
+        function alertFunc() {
+            
+            var newMain = document.createElement('div');
+            newMain.className = 'newMain';
+            newMain.innerHTML = '';
+            main.appendChild(newMain);
+
+            var newDate = document.createElement('div');
+            newDate.className = 'newDate';
+            newDate.innerHTML = 'Date: ' + getNewMessage().date;
+            newMain.appendChild(newDate);
+
+            var newSender = document.createElement('div');
+            newSender.className = 'newSender';
+            newSender.innerHTML = 'Sender: ' + getNewMessage().sender;
+            newMain.appendChild(newSender);
+
+            var newSubject = document.createElement('div');
+            newSubject.className = 'newSubject';
+            newSubject.innerHTML = 'Subject: ' + getNewMessage().subject;
+            newMain.appendChild(newSubject);
+
+            var newMessage = document.createElement('div');
+            newMessage.className = 'newMessage';
+            newMessage.innerHTML = 'Message: ';
+            newMain.appendChild(newMessage);
+
+            var newBody = document.createElement('div');
+            newBody.className = 'newBody';
+            newBody.innerHTML+= getNewMessage().body;
+            newMessage.appendChild(newBody);
+        }
+        // alertFunc();
+
+        function myStopFunction() {
+            // clearInterval(myVar);
+            myVar = clearInterval();
+        }
+        // myStopFunction();
+
+
+
+        // }    
         // }
-        // console.log(setInterval(getNewMessage()));
-
-
-            var moreMess = document.getElementsByClassName('moreMessage');
-            for (i=0; i<moreMess.length; i++){
-                moreMess[i].addEventListener('click', showMoreBody);
-            }
-
-            var moreBodyElem = document.getElementsByClassName('moreBody');
-            for (i=0; i<moreBodyElem.length; i++){
-                moreBodyElem[i].style.display = 'none';
-            }
-
-            function showMoreBody(){
-                var pElem = this.querySelectorAll('.moreBody')[0];
-                if (pElem.style.display === 'none'){
-                    pElem.style.display = 'block';
-                }else{
-                    pElem.style.display = 'none';
-                }
-            }            
 
 
 
-        // var moreDiv = document.createElement('div');
-        // moreDiv.className = 'more';
-        // moreDiv.innerHTML = 'New Messages';
-        // main.appendChild(moreDiv);
 
-        // var moreDivGet = document.getElementsByClassName('more');
-        // for (i=0; i<moreDivGet.length; i++){
-        //     moreDivGet[i].addEventListener('click', setInterval);
+        // <button onclick="myStartFunction()">Start</button> <button onclick="myStopFunction()">Stop</button>
+
+        // myVar = setInterval(function(){alertFunc();}, 2000);
+        // var newMail = [];
+
+        // var myVar;
+
+        // function myStartFunction() {
+        //     myVar = setInterval(alertFunc, 2000);
         // }
+        // // myStartFunction();
 
-        // function setInterval(){
-        //     var newMessage = document.createElement('div');
-        //     newMessage.className = 'newMessage';
-        //     newMessage.innerHTML = getNewMessage();
-        //     moreDiv.appendChild(newMessage);
-        // }
+        // function alertFunc() {
+        //     document.getElementsByClassName("newDate");
+        //     newDate.innerHTML = getNewMessage().date;
+
+        //     document.getElementsByClassName("newSender");
+        //     newSender.innerHTML = getNewMessage().sender;
         
+        //     document.getElementsByClassName("newSubject");
+        //     newSubject.innerHTML = getNewMessage().subject;
+        
+        //     document.getElementsByClassName("newBody");
+        //     newBody.innerHTML = getNewMessage().body;
+        // }
+        // // alertFunc();
+
+        // function myStopFunction() {
+        //     clearInterval(myVar);
+        // }
+        // // myStopFunction();
+
+
+
+
+        var newMess = document.getElementsByClassName('newMessage');
+        for (i=0; i<newMess.length; i++){
+            newMess[i].addEventListener('click', showNewBody);
+        }
+
+        var newBodyElem = document.getElementsByClassName('newBody');
+        for (i=0; i<newBodyElem.length; i++){
+            newBodyElem[i].style.display = 'none';
+        }
+
+        function showNewBody(){
+            var pElem = this.querySelectorAll('.newBody')[0];
+            if (pElem.style.display === 'none'){
+                pElem.style.display = 'block';
+            }else{
+                pElem.style.display = 'none';
+            }
+        }
+
+
+
+
       };
     </script>
-	</head>
-	<body>
-		<div class="container" id="main">
-			<!-- Build Me! -->
-		</div>
+    </head>
+    <body>
+        <div class="container" id="main">
+            <!-- Build Me! -->
+        </div>
 	</body>
 </html>
