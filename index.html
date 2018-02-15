@@ -262,7 +262,7 @@
         var myVar;
 
         function myStartFunction() {
-            myVar = setInterval(alertFunc, 10000);
+            myVar = setInterval(alertFunc, 1000);
         }
         // myStartFunction();
 
@@ -297,12 +297,35 @@
             newBody.className = 'newBody';
             newBody.innerHTML+= getNewMessage().body;
             newMessage.appendChild(newBody);
+
+
+
+
+            var newMess = document.getElementsByClassName('newMessage');
+            for (i=0; i<newMess.length; i++){
+                newMess[i].addEventListener('click', showNewBody);
+            }
+
+            // var newBodyElem = document.getElementsByClassName('newBody');
+            // for (i=0; i<newBodyElem.length; i++){
+            //     newBodyElem[i].style.display = 'none';
+            // }
+
+            function showNewBody(){
+                var pElem = this.querySelectorAll('.newBody')[0];
+                if (pElem.style.display === 'none'){
+                    pElem.style.display = 'block';
+                }else{
+                    pElem.style.display = 'none';
+                }
+            }
+
+            
         }
         // alertFunc();
 
         function myStopFunction() {
-            // clearInterval(myVar);
-            myVar = clearInterval();
+            clearInterval(myVar);
         }
         // myStopFunction();
 
@@ -347,26 +370,6 @@
         // // myStopFunction();
 
 
-
-
-        var newMess = document.getElementsByClassName('newMessage');
-        for (i=0; i<newMess.length; i++){
-            newMess[i].addEventListener('click', showNewBody);
-        }
-
-        var newBodyElem = document.getElementsByClassName('newBody');
-        for (i=0; i<newBodyElem.length; i++){
-            newBodyElem[i].style.display = 'none';
-        }
-
-        function showNewBody(){
-            var pElem = this.querySelectorAll('.newBody')[0];
-            if (pElem.style.display === 'none'){
-                pElem.style.display = 'block';
-            }else{
-                pElem.style.display = 'none';
-            }
-        }
 
 
 
