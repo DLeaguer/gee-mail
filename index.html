@@ -43,17 +43,24 @@
 
 
 
-        var objGet = window.geemails;
+        // var objGet = window.geemails;
         // var objGet = getNewMessage();
         // console.log(objGet);
-        var counter = objGet.length + sender.length;
-        var counterOld = sender.length;
-        var counterNew = objGet.length;
+        // var counter = objGet.length + sender.length;
+        // var counterOld = sender.length;
+        // var counterNew = objGet.length;
         // var counter = counterOld + counterNew;
 
+        // var newMess = 0;
+        // var count = 0;
+        var newcount = 0;
+        var counter = sender.length + newcount;
+        var counterOld = sender.length;
+        var counterNew = 0;
+ 
         var countDiv = document.createElement('p');
         countDiv.className = 'count';
-        countDiv.innerHTML = 'Inbox: ' + counter + ' total items.  ' + counterOld + ' old items.  ' + counterNew + ' new items.';
+        countDiv.innerHTML = 'Inbox: ' + counter + ' total items.  ' + counterOld + ' old items.  ' + newcount  + ' new items.';
         main.appendChild(countDiv);
 
         countDiv = document.createElement('p');
@@ -118,69 +125,69 @@
             }
         }
 
-        countDiv = document.createElement('p');
-        countDiv.className = 'countNew';
-        countDiv.innerHTML = 'Inbox: ' + objGet.length + ' new items below.';
-        main.appendChild(countDiv);
+        // countDiv = document.createElement('p');
+        // countDiv.className = 'countNew';
+        // countDiv.innerHTML = 'Inbox: ' + objGet.length + ' new items below.';
+        // main.appendChild(countDiv);
 
 
 
         
-        for (i=0; i<window.geemails.length; i++){
+        // for (i=0; i<window.geemails.length; i++){
 
-            var moreMain = document.createElement('div');
-            moreMain.className = 'moreMain';
-            moreMain.innerHTML = '';
-            main.appendChild(moreMain);
+        //     var moreMain = document.createElement('div');
+        //     moreMain.className = 'moreMain';
+        //     moreMain.innerHTML = '';
+        //     main.appendChild(moreMain);
 
-            var moreDate = document.createElement('div');
-            moreDate.className = 'moreDate';
-            moreDate.innerHTML = 'Date: ' + objGet[i].date;
-            moreMain.appendChild(moreDate);
+        //     var moreDate = document.createElement('div');
+        //     moreDate.className = 'moreDate';
+        //     moreDate.innerHTML = 'Date: ' + objGet[i].date;
+        //     moreMain.appendChild(moreDate);
 
-            var moreSender = document.createElement('div');
-            moreSender.className = 'moreSender';
-            moreSender.innerHTML = 'Sender: ' + objGet[i].sender;
-            moreMain.appendChild(moreSender);
+        //     var moreSender = document.createElement('div');
+        //     moreSender.className = 'moreSender';
+        //     moreSender.innerHTML = 'Sender: ' + objGet[i].sender;
+        //     moreMain.appendChild(moreSender);
 
-            var moreSubject = document.createElement('div');
-            moreSubject.className = 'moreSubject';
-            moreSubject.innerHTML = 'Subject: ' + objGet[i].subject;
-            moreMain.appendChild(moreSubject);
+        //     var moreSubject = document.createElement('div');
+        //     moreSubject.className = 'moreSubject';
+        //     moreSubject.innerHTML = 'Subject: ' + objGet[i].subject;
+        //     moreMain.appendChild(moreSubject);
 
-            var moreMessage = document.createElement('div');
-            moreMessage.className = 'moreMessage';
-            moreMessage.innerHTML = 'Message: ';
-            moreMain.appendChild(moreMessage);
+        //     var moreMessage = document.createElement('div');
+        //     moreMessage.className = 'moreMessage';
+        //     moreMessage.innerHTML = 'Message: ';
+        //     moreMain.appendChild(moreMessage);
 
-            var moreBody = document.createElement('div');
-            moreBody.className = 'moreBody';
-            moreBody.innerHTML = objGet[i].body;
-            moreMessage.appendChild(moreBody);
+        //     var moreBody = document.createElement('div');
+        //     moreBody.className = 'moreBody';
+        //     moreBody.innerHTML = objGet[i].body;
+        //     moreMessage.appendChild(moreBody);
             
-        }
+        // }
 
 
 
 
-        var moreMess = document.getElementsByClassName('moreMessage');
-        for (i=0; i<moreMess.length; i++){
-            moreMess[i].addEventListener('click', showMoreBody);
-        }
+        // var moreMess = document.getElementsByClassName('moreMessage');
+        // for (i=0; i<moreMess.length; i++){
+        //     moreMess[i].addEventListener('click', showMoreBody);
+        // }
 
-        var moreBodyElem = document.getElementsByClassName('moreBody');
-        for (i=0; i<moreBodyElem.length; i++){
-            moreBodyElem[i].style.display = 'none';
-        }
+        // var moreBodyElem = document.getElementsByClassName('moreBody');
+        // for (i=0; i<moreBodyElem.length; i++){
+        //     moreBodyElem[i].style.display = 'none';
+        // }
 
-        function showMoreBody(){
-            var pElem = this.querySelectorAll('.moreBody')[0];
-            if (pElem.style.display === 'none'){
-                pElem.style.display = 'block';
-            }else{
-                pElem.style.display = 'none';
-            }
-        }
+        // function showMoreBody(){
+        //     var pElem = this.querySelectorAll('.moreBody')[0];
+        //     if (pElem.style.display === 'none'){
+        //         pElem.style.display = 'block';
+        //     }else{
+        //         pElem.style.display = 'none';
+        //     }
+        // }
 
 
 
@@ -248,7 +255,7 @@
 
         countDiv = document.createElement('p');
         countDiv.className = 'countNew';
-        countDiv.innerHTML = 'Inbox: ' + myVar + ' new items below.';
+        countDiv.innerHTML = 'Inbox: ' + newcount + ' new items below.';
         main.appendChild(countDiv);
         // console.log(newmail.length);
                 
@@ -257,17 +264,24 @@
         // function getNewMessage() {    
         // for (i=0; i<getNewMessage().length; i++){
 
-
+        newcount = 0;
+        console.log(newcount);
 
         var myVar;
-
         function myStartFunction() {
             myVar = setInterval(alertFunc, 1000);
         }
         // myStartFunction();
 
         function alertFunc() {
-            
+
+            // var newcounted = document.createElement('div');
+            // newcounted.className = 'newcount';
+            // newcounted.innerHTML = newcount ;
+            // main.appendChild(newcounted);
+            newcount++;
+            console.log(newcount);
+
             var newMain = document.createElement('div');
             newMain.className = 'newMain';
             newMain.innerHTML = '';
@@ -298,7 +312,10 @@
             newBody.innerHTML+= getNewMessage().body;
             newMessage.appendChild(newBody);
 
-
+            // var newBodyElem = document.getElementsByClassName('newBody');
+            // for (i=0; i<newBodyElem.length; i++){
+            //     newBodyElem[i].style.display = 'none';
+            // }
 
 
             var newMess = document.getElementsByClassName('newMessage');
@@ -306,10 +323,6 @@
                 newMess[i].addEventListener('click', showNewBody);
             }
 
-            // var newBodyElem = document.getElementsByClassName('newBody');
-            // for (i=0; i<newBodyElem.length; i++){
-            //     newBodyElem[i].style.display = 'none';
-            // }
 
             function showNewBody(){
                 var pElem = this.querySelectorAll('.newBody')[0];
@@ -320,9 +333,27 @@
                 }
             }
 
+            // console.log(newMess.length);
+            // console.log(i);
+            // counter = i++;
+            // console.log(counter);
+
+            // var count;
+            // for (var i=1; i<count.length; i++){
+            //     count = document.createElement('div');
+            //     count.className = 'count';
+            //     count.innerHTML = newcount;
+            //     main.appendChild(count);
+            // }
+            // newcount ++; 
+            // console.log(newcount);
             
         }
         // alertFunc();
+
+        // console.log(newcount);
+        // console.log(newMess);
+
 
         function myStopFunction() {
             clearInterval(myVar);

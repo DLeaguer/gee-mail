@@ -128,3 +128,7 @@ h1{
 	margin-right: 75%;
 	border: 1px solid black;
 }
+
+.newcount{
+	display: inline;
+}
