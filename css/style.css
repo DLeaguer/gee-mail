@@ -13,7 +13,6 @@ h1{
 }
 
 .imgBack{
-	/*height: 200px;*/
 	background-image: url('../images/blurryLights.png');
 	background-size: 300px 200px;
 	background-repeat: space;
@@ -29,26 +28,8 @@ h1{
 	background-image: url('../images/blurryLights.jpg');
 	background-color: turquoise;
 	color: white;
-	font-family: 
-	/*border: 1px solid black;*/
-	padding: 25px;
-	margin: 25px;
-	margin-right: 48%;
-	margin-left: 10%;
-}
-
-.countOld{
-	background-image: url('../images/blurryLights.jpg');
-	background-color: turquoise;
-	color: white;
-	margin-right: 78%;
-}
-
-.countNew{
-	background-image: url('../images/blurryLights.jpg');
-	background-color: turquoise;
-	color: white;
-	margin-right: 77%;
+	font-family: ;
+	display: inline;
 }
 
 .main{
@@ -71,26 +52,6 @@ h1{
 	display: none;
 }
 
-.moreMain{
-	background-color: lavender;
-	border: 1px solid black;
-	margin: 5px;
-	margin-right: 10%;
-	margin-left: 10%;
-}
-
-.moreMessage{
-	margin: 5px;
-}
-
-.moreMessage:hover{
-	cursor: pointer;
-}
-
-.moreBody{
-	display: none;
-}
-
 .newMain{
 	background-color: lavender;
 	border: 1px solid black;
@@ -109,26 +70,4 @@ h1{
 
 .newBody{
 	display: none;
-}
-
-.buttonStart{
-	background-image: url('../images/blurryLights.jpg');
-	/*background-color: gray;*/
-	cursor: pointer;
-	margin: 5px;
-	margin-right: 75%;
-	border: 1px solid black;
-}
-
-.buttonStop{
-	background-image: url('../images/blurryLights.jpg');
-	/*background-color: gray;*/
-	cursor: pointer;
-	margin: 5px;
-	margin-right: 75%;
-	border: 1px solid black;
-}
-
-.newcount{
-	display: inline;
 }

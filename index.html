@@ -8,69 +8,60 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
+
+
+
+        //header title with background
         var getMain = document.getElementById('main');
 
         var headerh1 = document.createElement('h1');
         headerh1.className = 'header';
-        // headerh1.innerHTML = 'Gee-Mail';
-        // headerh1.src = '../images/blurryLights.jpg';
         main.appendChild(headerh1);
 
         var imgBack = document.createElement('h2');
         imgBack.className = 'imgBack';
-        // imgBack.src = '../images/blurryLights.jpg';
         imgBack.innerHTML = 'Gee';
         headerh1.appendChild(imgBack);
         
         var imgBack2 = document.createElement('h2');
         imgBack2.className = 'imgBack';
-        // imgBack.src = '../images/blurryLights.jpg';
         imgBack2.innerHTML = 'Mail';
         imgBack.appendChild(imgBack2);
 
-        // function setInterval(){
-            // for (var i=0; i<5; i++){
-            //     getNewMessage();
-            //     loadGeeMails();
-            // }
-            // console.log(loadGeeMails());
-            // return loadGeeMails();
-            // console.log(getNewMessage());
-            // return getNewMessage();
-        // }
-        
 
 
+        //counter 
+        var delay = 5000;
 
-        // var objGet = window.geemails;
-        // var objGet = getNewMessage();
-        // console.log(objGet);
-        // var counter = objGet.length + sender.length;
-        // var counterOld = sender.length;
-        // var counterNew = objGet.length;
-        // var counter = counterOld + counterNew;
+        var count = 0;
 
-        // var newMess = 0;
-        // var count = 0;
-        var newcount = 0;
-        var counter = sender.length + newcount;
-        var counterOld = sender.length;
-        var counterNew = 0;
- 
-        var countDiv = document.createElement('p');
+        var countDiv = document.createElement('div');
         countDiv.className = 'count';
-        countDiv.innerHTML = 'Inbox: ' + counter + ' total items.  ' + counterOld + ' old items.  ' + newcount  + ' new items.';
+        countDiv.innerHTML = 'Inbox:  ';
         main.appendChild(countDiv);
 
-        countDiv = document.createElement('p');
-        countDiv.className = 'countOld';
-        countDiv.innerHTML = 'Inbox: ' + sender.length + ' old items below.';
-        main.appendChild(countDiv);
+        var counted = document.createElement('div');
+        counted.className = 'count';
+        main.appendChild(counted);
 
 
 
+        //counter setInterval (see counter for delay)
+        var vari;
+        function counting(){
+            vari = setInterval(countMess, delay);
+        }
+        counting();
 
+        function countMess(){
+            count++;
+            counted.innerHTML = sender.length + count;
+        }
+        countMess();
+
+
+
+        //original 10 gee mails
         for (var i=0; i<sender.length; i++){
 
             var mainDiv = document.createElement('div');
@@ -106,6 +97,7 @@
 
 
 
+        //show original 10 body messages
         var messDivGet = document.getElementsByClassName('message');
         for (i=0; i<messDivGet.length; i++){
             messDivGet[i].addEventListener('click', showBody);
@@ -125,178 +117,33 @@
             }
         }
 
-        // countDiv = document.createElement('p');
-        // countDiv.className = 'countNew';
-        // countDiv.innerHTML = 'Inbox: ' + objGet.length + ' new items below.';
-        // main.appendChild(countDiv);
 
 
-
-        
-        // for (i=0; i<window.geemails.length; i++){
-
-        //     var moreMain = document.createElement('div');
-        //     moreMain.className = 'moreMain';
-        //     moreMain.innerHTML = '';
-        //     main.appendChild(moreMain);
-
-        //     var moreDate = document.createElement('div');
-        //     moreDate.className = 'moreDate';
-        //     moreDate.innerHTML = 'Date: ' + objGet[i].date;
-        //     moreMain.appendChild(moreDate);
-
-        //     var moreSender = document.createElement('div');
-        //     moreSender.className = 'moreSender';
-        //     moreSender.innerHTML = 'Sender: ' + objGet[i].sender;
-        //     moreMain.appendChild(moreSender);
-
-        //     var moreSubject = document.createElement('div');
-        //     moreSubject.className = 'moreSubject';
-        //     moreSubject.innerHTML = 'Subject: ' + objGet[i].subject;
-        //     moreMain.appendChild(moreSubject);
-
-        //     var moreMessage = document.createElement('div');
-        //     moreMessage.className = 'moreMessage';
-        //     moreMessage.innerHTML = 'Message: ';
-        //     moreMain.appendChild(moreMessage);
-
-        //     var moreBody = document.createElement('div');
-        //     moreBody.className = 'moreBody';
-        //     moreBody.innerHTML = objGet[i].body;
-        //     moreMessage.appendChild(moreBody);
-            
-        // }
-
-
-
-
-        // var moreMess = document.getElementsByClassName('moreMessage');
-        // for (i=0; i<moreMess.length; i++){
-        //     moreMess[i].addEventListener('click', showMoreBody);
-        // }
-
-        // var moreBodyElem = document.getElementsByClassName('moreBody');
-        // for (i=0; i<moreBodyElem.length; i++){
-        //     moreBodyElem[i].style.display = 'none';
-        // }
-
-        // function showMoreBody(){
-        //     var pElem = this.querySelectorAll('.moreBody')[0];
-        //     if (pElem.style.display === 'none'){
-        //         pElem.style.display = 'block';
-        //     }else{
-        //         pElem.style.display = 'none';
-        //     }
-        // }
-
-
-
-
-        // var myVar;
-        // function myStartFunction() {
-        // myVar = setInterval(alertFunc, 2000);
-        // }
-
-        // function alertFunc() {
-        // document.getElementsByClassName("newMain").innerHTML += getNewMessage().date;
-
-        // }
-
-        // var newMail = [];
-        // function myMail(){
-        //     setInterval(messages(), 5000);
-        // }   
-        // function messages(){
-        //     newMail += getNewMessage();
-        // } 
-        // console.log(getNewMessage());
-        
-
-
-        // // var newMail;
-        // // function myMail(){
-        //    var newMail = setInterval(function(){getNewMessage();}, 10000);
-        // // }
-        // // myMail();
-        // // console.log(myMail);
-        // var myMail = [];
-        // function getNewMessage(){
-        //     // document.getElementsByClassName('newDate').innerHTML += getNewMessage().date;
-        //     for (var i=0; i<10; i++){
-        //         myMail.push(getNewMessage());
-        //     }
-        // }
-
-
-        var buttonStart = document.createElement('div');
-        buttonStart.className = 'buttonStart';
-        buttonStart.innerHTML = 'More Messages Start';
-        main.appendChild(buttonStart);
-
-        var buttonStartGet = document.getElementsByClassName('buttonStart');
-        for (i=0; i<buttonStartGet.length; i++){
-            buttonStartGet[i].addEventListener('click', myStartFunction);
-        }
-
-
-        var buttonStop = document.createElement('div');
-        buttonStop.className = 'buttonStop';
-        buttonStop.innerHTML = 'More Messages Stop';
-        main.appendChild(buttonStop);
-
-        var buttonStopGet = document.getElementsByClassName('buttonStop');
-        for (i=0; i<buttonStopGet.length; i++){
-            buttonStopGet[i].addEventListener('click', myStopFunction);
-        }
-
-
-            // console.log(newMail);
-            // console.log(getNewMessage());
-
-        countDiv = document.createElement('p');
-        countDiv.className = 'countNew';
-        countDiv.innerHTML = 'Inbox: ' + newcount + ' new items below.';
-        main.appendChild(countDiv);
-        // console.log(newmail.length);
-                
-
-
-        // function getNewMessage() {    
-        // for (i=0; i<getNewMessage().length; i++){
-
-        newcount = 0;
-        console.log(newcount);
-
+        //new gee mails setInterval (see counter for delay)
         var myVar;
+
         function myStartFunction() {
-            myVar = setInterval(alertFunc, 1000);
+            myVar = setInterval(alertFunc, delay);
         }
-        // myStartFunction();
-
+        myStartFunction();
+        
         function alertFunc() {
-
-            // var newcounted = document.createElement('div');
-            // newcounted.className = 'newcount';
-            // newcounted.innerHTML = newcount ;
-            // main.appendChild(newcounted);
-            newcount++;
-            console.log(newcount);
-
+            
             var newMain = document.createElement('div');
             newMain.className = 'newMain';
             newMain.innerHTML = '';
             main.appendChild(newMain);
-
+            
             var newDate = document.createElement('div');
             newDate.className = 'newDate';
             newDate.innerHTML = 'Date: ' + getNewMessage().date;
             newMain.appendChild(newDate);
-
+            
             var newSender = document.createElement('div');
             newSender.className = 'newSender';
             newSender.innerHTML = 'Sender: ' + getNewMessage().sender;
             newMain.appendChild(newSender);
-
+            
             var newSubject = document.createElement('div');
             newSubject.className = 'newSubject';
             newSubject.innerHTML = 'Subject: ' + getNewMessage().subject;
@@ -312,17 +159,13 @@
             newBody.innerHTML+= getNewMessage().body;
             newMessage.appendChild(newBody);
 
-            // var newBodyElem = document.getElementsByClassName('newBody');
-            // for (i=0; i<newBodyElem.length; i++){
-            //     newBodyElem[i].style.display = 'none';
-            // }
 
 
+            //show new body messages inside setInterval
             var newMess = document.getElementsByClassName('newMessage');
             for (i=0; i<newMess.length; i++){
                 newMess[i].addEventListener('click', showNewBody);
             }
-
 
             function showNewBody(){
                 var pElem = this.querySelectorAll('.newBody')[0];
@@ -333,75 +176,8 @@
                 }
             }
 
-            // console.log(newMess.length);
-            // console.log(i);
-            // counter = i++;
-            // console.log(counter);
-
-            // var count;
-            // for (var i=1; i<count.length; i++){
-            //     count = document.createElement('div');
-            //     count.className = 'count';
-            //     count.innerHTML = newcount;
-            //     main.appendChild(count);
-            // }
-            // newcount ++; 
-            // console.log(newcount);
-            
         }
-        // alertFunc();
-
-        // console.log(newcount);
-        // console.log(newMess);
-
-
-        function myStopFunction() {
-            clearInterval(myVar);
-        }
-        // myStopFunction();
-
-
-
-        // }    
-        // }
-
-
-
-
-        // <button onclick="myStartFunction()">Start</button> <button onclick="myStopFunction()">Stop</button>
-
-        // myVar = setInterval(function(){alertFunc();}, 2000);
-        // var newMail = [];
-
-        // var myVar;
-
-        // function myStartFunction() {
-        //     myVar = setInterval(alertFunc, 2000);
-        // }
-        // // myStartFunction();
-
-        // function alertFunc() {
-        //     document.getElementsByClassName("newDate");
-        //     newDate.innerHTML = getNewMessage().date;
-
-        //     document.getElementsByClassName("newSender");
-        //     newSender.innerHTML = getNewMessage().sender;
-        
-        //     document.getElementsByClassName("newSubject");
-        //     newSubject.innerHTML = getNewMessage().subject;
-        
-        //     document.getElementsByClassName("newBody");
-        //     newBody.innerHTML = getNewMessage().body;
-        // }
-        // // alertFunc();
-
-        // function myStopFunction() {
-        //     clearInterval(myVar);
-        // }
-        // // myStopFunction();
-
-
-
+        alertFunc();
 
 
 
